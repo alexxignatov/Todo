@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Todo.Tests
 {
     [TestFixture]
-    public class TodoControllerTest
+    public class MainControllerTest
     {
         [Test]
         public void Inde_a_()

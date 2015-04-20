@@ -1,0 +1,26 @@
+﻿@model IList<string>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Ajax.BeginForm("Update", "Main", new AjaxOptions 
+                                                {
+                                                    Url = @Url.Action("UpdateAjax"),
+                                                    HttpMethod = "post",
+                                                    InsertionMode = InsertionMode.InsertAfter,
+                                                    UpdateTargetId = "container"
+                                                }))
+{
+    @Html.TextBox("val")
+    <input type="submit" value="Submit" />
+}
+
+<div id="container">
+    @foreach (var item in @Model)
+    {
+        @MyHelpers.Task(@item)
+    }
+</div>
+
+
